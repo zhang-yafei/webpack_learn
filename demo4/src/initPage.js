@@ -1,0 +1,1 @@
+module.exports = 'This is 3 page!';
