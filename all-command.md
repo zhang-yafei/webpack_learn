@@ -17,12 +17,12 @@ webpack src/index.js public/bundle.js
 命令行中切换到当前目录，运行webpack，即可看到文件已经成功被打包
 
 4. demo4-打包方式
-这就要提到一个属性Source Maps了，该属性有4个属性值
+这就要提到一个属性devtool了，该属性有4个属性值
 source-map
 cheap-module-source-map
 eval-source-map
 cheap-module-eval-source-map
-从上到下，打包的速度越来越快，但是调试起来也越来越麻烦。
+从上到下，打包的速度越来越快，但是代码压缩的越来越严重，调试起来也越来越麻烦。
 
 5. demo5-配置热更新
 热更新的话，这里使用的是webpack-dev-server,我们需要安装一下该模块
@@ -36,7 +36,7 @@ inline：是否自动刷新页面，true自动刷新
 historyApiFallback:是否指向同一个html页面
 这个额是我的配置
 devServer: {
-	contentBase: "./demo6/public",s
+	contentBase: "./demo6/public",
 	port:"8090",
 	inline:true,
 	historyApiFallback:true
@@ -95,6 +95,24 @@ less-loader
 react-loaders
 等
 IgnorePlugin//忽略掉指定的模块
-ExtractTextPlugin//分离css文件
+extract-text-webpack-plugin//分离css文件
 CommonsChunkPlugin//合并公共模块的插件
 ProvidePlugin//内置插件，使用以后将不再需要import和require进行引入
+
+
+关于webpack4，
+我们需要设置一下默认配置mode
+
+3种配置可选
+--none
+--deveploment
+--production
+默认路径是.src/index.js
+默认输出路径经dist
+运行时，只需要输入webpack --mode development
+
+
+
+以上内容参考
+https://www.jianshu.com/p/42e11515c10f#
+https://www.runoob.com/w3cnote/webpack-tutorial.html
