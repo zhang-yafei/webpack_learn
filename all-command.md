@@ -73,7 +73,7 @@ webpack.BannerPlugin，是webpack自带的
     new webpack.BannerPlugin('This is webpack demo')
 ],
 
-HtmlWebpackPlugin插件，这个插件使用的比较多，作用是根据一个idnex模板，是生成新的html页面
+HtmlWebpackPlugin插件，这个插件使用的比较多，作用是根据一个idnex模板，动态生成新的html页面，并引入相应的script标签和link标签
 先安装这个插件
 npm install --save-dev html-webpack-plugin
 new HtmlWebpackPlugin({
@@ -85,3 +85,16 @@ js代码压缩，我们可以使用这个插件
 new webpack.optimize.UglifyJsPlugin(),
 
 对于缓存，我们一般都是使用hash值去区别不同的文件。这块webpack已经自带生成hash功能
+使用方式[hash]，这个语法编译后就是hash值
+
+关于其他常用的插件
+url-loader//用于引入图片
+babel-loader babel-preset-es2015 //用于兼容es6语法
+sass-loader 
+less-loader
+react-loaders
+等
+IgnorePlugin//忽略掉指定的模块
+ExtractTextPlugin//分离css文件
+CommonsChunkPlugin//合并公共模块的插件
+ProvidePlugin//内置插件，使用以后将不再需要import和require进行引入
